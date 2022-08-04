@@ -1,21 +1,34 @@
 ## Semiconductor quality prediction and pipeline
 #### A MLops Zoom camp project
 
-
 Task 1)
-Convert notebook into .py sections and a main.py
+Add experiment tracking and set-up registery server (local) artifacts in s3 with MLflow
+    * Experiment tracking (DONE)
+    * Model registery ()
 
 Task 2)
-Create tests,linting and pre-commit hooks
+Convert notebook into a pipeline
 
 Task 3)
-Connect with cloud. Upload model to the cloud.
-
-Task 4)
-Add experiment tracking with MLflow
+Create tests,linting and pre-commit hooks
 
 Task 5)
 Add orchestration with Prefect
 
+Task 4)
+Connect with cloud. Upload model to the cloud.
+
 Task 6)
 To be continued
+
+
+
+
+Usefull commands:
+
+pipenv:
+
+$pipenv install
+$pipenv install --dev [library]
+$pipenv --venv
+

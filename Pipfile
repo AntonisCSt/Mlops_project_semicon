@@ -8,6 +8,7 @@ pandas = "*"
 numpy = "*"
 mlflow = "*"
 sklearn = "*"
+xgboost = "*"
 
 [dev-packages]
 matplotlib = "*"
