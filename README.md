@@ -32,3 +32,13 @@ $pipenv install
 $pipenv install --dev [library]
 $pipenv --venv
 
+mlflow: 
+
+mlflow server --backend-store-uri=sqlite:///mlflow.db --default-artifact-root=s3://mlflow-semicon-clf/
+
+use:
+
+mlflow.set_tracking_uri("sqlite:///mlflow.db")
+#mlflow.set_experiment("testing-mlflow")
+mlflow.create_experiment("semicon-sensor-clf","s3://mlflow-semicon-clf/")
+mlflow.set_experiment("semicon-sensor-clf")
