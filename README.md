@@ -4,10 +4,15 @@
 Task 1)
 Add experiment tracking and set-up registery server (local) artifacts in s3 with MLflow
     * Experiment tracking (DONE)
-    * Model registery ()
+    * Model registery (DONE)
+    * Connect to S3 (DONE)
 
 Task 2)
 Convert notebook into a pipeline
+    * Define pipeline (DONE)
+    * Write the Pipeline
+    * Deploy model
+    * Use and Test model
 
 Task 3)
 Create tests,linting and pre-commit hooks
