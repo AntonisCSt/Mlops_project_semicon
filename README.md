@@ -28,7 +28,23 @@ To be continued
 
 
 
+## Instructions
 
+#### 1) Install enviroment
+use:
+```
+$pipenv install
+```
+
+#### 2) Create a S3 bucket for mlflow
+
+in train.py and main_notebook.ipynb
+```python
+mlflow.create_experiment("semicon-sensor-clf","s3://mlflow-semicon-clf/")
+
+```
+(or use a local file)
+### 3)
 Usefull commands:
 
 pipenv:
