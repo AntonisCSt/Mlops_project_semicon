@@ -14,8 +14,8 @@ mlflow.set_tracking_uri("sqlite:///mlflow.db")
 #mlflow.set_experiment("testing-mlflow")
 
 #dont forget to create a bucket and set it here: #TODO: make a variables file for these global parameters
-mlflow.create_experiment("semicon-sensor-clf","s3://mlflow-semicon-clf/")
-mlflow.set_experiment("semicon-sensor-clf")
+mlflow.create_experiment("semicon-sensor-clf3","s3://mlflow-semicon-clf/")
+mlflow.set_experiment("semicon-sensor-clf3")
 
 # Data 
 df = pd.read_csv('.\\data\\uci-secom.csv',delimiter=',')

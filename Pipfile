@@ -9,12 +9,16 @@ numpy = "*"
 mlflow = "*"
 sklearn = "*"
 xgboost = "*"
+fastapi = "*"
+loguru = "*"
 
 [dev-packages]
 matplotlib = "*"
 seaborn = "*"
 ipykernel = "*"
 boto3 = "*"
+loguru = "*"
+uvicorn = "*"
 
 [requires]
 python_version = "3.9"
