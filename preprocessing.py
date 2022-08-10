@@ -5,10 +5,7 @@
 import pandas as pd
 
 # Modeling libraries
-from sklearn.impute import SimpleImputer
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.decomposition import PCA
 from sklearn.preprocessing import LabelEncoder
 
 def preprocess_semicon(df:object):
@@ -54,42 +51,4 @@ def preprocess_semicon(df:object):
                                                         stratify=y, 
                                                         test_size=0.15)
 
-
-
-    # 3) cleaning method mean
-
-
-    imp_mean = SimpleImputer( strategy='median') #for median imputation replace 'mean' with 'median'
-    imp_mean.fit(X_train) #need to save this for later
-
-    #transform data  (fill nans)
-    X_train = imp_mean.transform(X_train)
-    X_test = imp_mean.transform(X_test)
-
-
-
-    # 4) scale data
-
-    # Standardizing the features
-    sc = StandardScaler().fit(X_train)
-
-    #transform data  (scale data)
-    X_train = sc.transform(X_train)
-    X_test = sc.transform(X_test)
-
-
-    # 5) Use PCA
-
-    pca = PCA(n_components=15)
-    pca_tr = pca.fit(X_train)
-
-    #transform data  (PCA)
-    X_train = pca_tr.transform(X_train)
-    X_test = pca_tr.transform(X_test)
-
-    X_train = pd.DataFrame(data = X_train)
-    X_test = pd.DataFrame(data = X_test)
-
-
-
-    return X_train, X_test, y_train, y_test, sc, pca_tr
+    return X_train, X_test, y_train, y_test
