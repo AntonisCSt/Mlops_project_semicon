@@ -10,10 +10,10 @@ Add experiment tracking and set-up registery server (local) artifacts in s3 with
 Task 2)
 Convert notebook into a pipeline
     * Define pipeline (DONE)
-    * write individual scirpts of pipeline(DONE)
-    * create a scikit learn pipeline to have preprocess and model together()
-    * finish predict
-    * Use and Test model
+    * write individual scirpts of pipeline (DONE)
+    * create a scikit learn pipeline to have preprocess and model together (DONE)
+    * finish predict (DONE)
+    * Use and Test model (DONE)
 
 Task 3)
 Create tests,linting and pre-commit hooks
@@ -51,12 +51,13 @@ mlflow.create_experiment("semicon-sensor-clf","[your S3 bucket]")
 
 #### 3) Run prediction locally using FastAPI and uvicorn server (dev)
 
-http://localhost:8001/docs
+run: predict.py
 
-press "try it out"
+go to : http://localhost:8001/docs
 
-use example:
+press :"try it out"
 
+use example: from test_one_input.txt (it should give output as "0")
 
 #### How can you contribure:
 Currently this project focuses on MLops. It is weak on the actual ML-pipeline.
