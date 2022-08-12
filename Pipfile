@@ -11,6 +11,7 @@ sklearn = "*"
 xgboost = "*"
 fastapi = "*"
 loguru = "*"
+prefect = "==2.0b6"
 
 [dev-packages]
 matplotlib = "*"

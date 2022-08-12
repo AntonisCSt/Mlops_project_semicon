@@ -3,29 +3,33 @@
 
 Task 1)
 Add experiment tracking and set-up registery server (local) artifacts in s3 with MLflow
-    * Experiment tracking (DONE)
-    * Model registery (DONE)
-    * Connect to S3 (DONE)
+* Experiment tracking (DONE)
+* Model registery (DONE)
+* Connect to S3 (DONE)
 
 Task 2)
 Convert notebook into a pipeline
-    * Define pipeline (DONE)
-    * write individual scirpts of pipeline (DONE)
-    * create a scikit learn pipeline to have preprocess and model together (DONE)
-    * finish predict (DONE)
-    * Use and Test model (DONE)
+* Define pipeline (DONE)
+* write individual scirpts of pipeline (DONE)
+* create a scikit learn pipeline to have preprocess and model together (DONE)
+* finish predict (DONE)
+* Use and Test model (DONE)
 
 Task 3)
+Add orchestration with Prefect 
+* Added Prefect flow in train.py (DONE) (12/08/22)
+* Deploy Prefect on EC2
+
+Task 4)
 Create tests,linting and pre-commit hooks
 
 Task 5)
-Add orchestration with Prefect
-
-Task 4)
 Connect with cloud. Upload model to the cloud.
+* Upload model using boto3
+* Have it used in the predict.py
 
 Task 6)
-To be continued
+CI/CD and Github actions
 
 
 
@@ -85,3 +89,9 @@ mlflow.set_tracking_uri("sqlite:///mlflow.db")
 #mlflow.set_experiment("testing-mlflow")
 mlflow.create_experiment("semicon-sensor-clf","s3://mlflow-semicon-clf/")
 mlflow.set_experiment("semicon-sensor-clf")
+
+
+
+prefect:
+
+prefect orion start
