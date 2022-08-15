@@ -21,15 +21,26 @@ Add orchestration with Prefect
 * Deploy Prefect on EC2
 
 Task 4)
-Create tests,linting and pre-commit hooks
+AWS model deploy also connect kinesis and lambda function
+* Deploy flask model to AWS using with docker
+* Create Lambda function
+* Predict using kinesis streams
+
 
 Task 5)
-Connect with cloud. Upload model to the cloud.
-* Upload model using boto3
-* Have it used in the predict.py
+Add Monitoring
 
-Task 6)
-CI/CD and Github actions
+
+Task 5)
+Create tests,linting and pre-commit hooks
+* Add tests:
+    Prefect tasks (DONE) (15/08/22)
+
+* Add linting
+* Add config.yml for connecting general parameters
+* Add CI/CD
+
+
 
 
 
@@ -62,6 +73,11 @@ go to : http://localhost:8001/docs
 press :"try it out"
 
 use example: from test_one_input.txt (it should give output as "0")
+
+
+#### 4) Testing flow and other functions
+
+run: pytest
 
 #### How can you contribure:
 Currently this project focuses on MLops. It is weak on the actual ML-pipeline.
