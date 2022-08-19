@@ -27,8 +27,6 @@ Add Monitoring
 
 Task 4)
 AWS model deploy also connect kinesis and lambda function
-* Deploy flask model to AWS using with docker
-* Create Lambda function
 * Predict using kinesis streams
 
 
