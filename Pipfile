@@ -12,6 +12,10 @@ xgboost = "*"
 fastapi = "*"
 loguru = "*"
 prefect = "==2.0b6"
+pymongo = "*"
+flask = "*"
+pyarrow = "*"
+evidently = "*"
 
 [dev-packages]
 matplotlib = "*"

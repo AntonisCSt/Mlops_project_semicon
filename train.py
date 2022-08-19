@@ -112,12 +112,13 @@ def main(file_path: str='.\\data\\uci-secom.csv'):
     #mlflow.set_experiment("testing-mlflow")
 
     #dont forget to create a bucket and set it here: #TODO: make a variables file for these global parameters
-    #mlflow.create_experiment("semicon-sensor-clf14","s3://mlflow-semicon-clf/")
-    mlflow.set_experiment("semicon-sensor-clf14")
+    mlflow.create_experiment("semicon-sensor-clf15","s3://mlflow-semicon-clf/")
+    mlflow.set_experiment("semicon-sensor-clf15")
     
     df = read_data(file_path)
     X_train, X_test, y_train, y_test = preprocess_semicon(df).result()
     score,y_test, y_pred = model_train(X_train, X_test, y_train, y_test).result()
+    
     # print confusion matrix
     print(classification_report(y_test, y_pred))
 

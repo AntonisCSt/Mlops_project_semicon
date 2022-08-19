@@ -18,7 +18,12 @@ Convert notebook into a pipeline
 Task 3)
 Add orchestration with Prefect 
 * Added Prefect flow in train.py (DONE) (12/08/22)
-* Deploy Prefect on EC2
+* Full deploy prefect
+
+Task 4)
+Add Monitoring
+* Add Monitoring service (DONE) (19/08/22)
+* Connect mlflow to monitoring image
 
 Task 4)
 AWS model deploy also connect kinesis and lambda function
@@ -27,8 +32,7 @@ AWS model deploy also connect kinesis and lambda function
 * Predict using kinesis streams
 
 
-Task 5)
-Add Monitoring
+
 
 
 Task 5)
@@ -78,6 +82,11 @@ use example: from test_one_input.txt (it should give output as "0")
 #### 4) Testing flow and other functions
 
 run: pytest
+
+#### 5) Run app and monitoring service
+
+docker compose -f docker-compose.yml up --build
+python .\send_data.py
 
 #### How can you contribure:
 Currently this project focuses on MLops. It is weak on the actual ML-pipeline.
