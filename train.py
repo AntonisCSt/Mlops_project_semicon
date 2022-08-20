@@ -33,7 +33,7 @@ def read_data(file_path='.\\data\\uci-secom.csv'):
 
     
     df = pd.read_csv(file_path,delimiter=',')
-    df = df.drop("Unnamed: 0", axis=1, inplace=False)
+    df = df.drop("Unnamed: 0", axis=1, inplace=False,errors='ignore')
     return df
 
 # preprocess
@@ -58,10 +58,8 @@ def preprocess_semicon(df:object):
     class_0_under = class_0.sample(class_count_1*4)
 
     test_under = pd.concat([class_0_under, class_1], axis=0)
-
-    print("total class of 1 and 0:",test_under['Pass/Fail'].value_counts())# plot the count after under-sampeling
-    #plot (currently not eneeded)
-    #test_under['Pass/Fail'].value_counts().plot(kind='bar', title='count (target)')
+    
+    print("total class of 1 and 0:",test_under['Pass/Fail'].value_counts())
 
     X = test_under.drop(['Pass/Fail','Time'], axis=1)
     y = test_under['Pass/Fail']

@@ -24,6 +24,9 @@ ipykernel = "*"
 boto3 = "*"
 loguru = "*"
 uvicorn = "*"
+pylint = "*"
+black = "*"
+isort = "*"
 
 [requires]
 python_version = "3.9"

@@ -28,5 +28,5 @@ with open("target.csv", 'w') as f_target:
         resp = requests.post("http://127.0.0.1:9696/predict",
                              headers={"Content-Type": "application/json"},
                              data=json.dumps(row, cls=DateTimeEncoder)).json()
-        print(f"prediction: {resp['Pass/Fail']}")
         sleep(1)
+        break
