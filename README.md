@@ -1,6 +1,11 @@
 ## Semiconductor quality prediction and pipeline
 #### A MLops Zoom camp project
 
+## About the project
+
+----Under construction------
+
+## Tasks and dates
 Task 1)
 Add experiment tracking and set-up registery server (local) artifacts in s3 with MLflow
 * Experiment tracking (DONE)
@@ -30,16 +35,15 @@ AWS model deploy also connect kinesis and lambda function
 * Predict using kinesis streams
 
 Task 5)
-Create tests,linting and pre-commit hooks
+Best practices --> Create tests,linting and pre-commit hooks
 * Add tests:
     Prefect tasks (DONE) (15/08/22)
-* Add linting
+    Integration tests (DONE) (20/08/22)
+* Add pre-commit hooks (Done) (20/08/22)
+* Add linting (Done) (20/08/22)
+* Add Makefile
 * Add config.yml for connecting general parameters
 * Add CI/CD
-
-
-
-
 
 ## Instructions
 
@@ -89,7 +93,7 @@ Currently this project focuses on MLops. It is weak on the actual ML-pipeline.
 2) Try other classification models and grid search.
 
 
-Usefull commands:
+### Usefull commands:
 
 pipenv:
 
@@ -115,6 +119,12 @@ pylint --recursive=y train.py, predict.py, ./prefect_monitoring/prefect_monitori
 black --skip-string-normalization  --diff train.py, predict.py, ./prefect_monitoring/prefect_monitoring.py
 
 black --skip-string-normalization train.py, predict.py, ./prefect_monitoring/prefect_monitoring.py, ./prediction_service/app.py
+
+
+git:
+
+pre-commit
+
 
 prefect:
 
