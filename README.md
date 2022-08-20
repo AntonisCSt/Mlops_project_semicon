@@ -29,15 +29,10 @@ Task 4)
 AWS model deploy also connect kinesis and lambda function
 * Predict using kinesis streams
 
-
-
-
-
 Task 5)
 Create tests,linting and pre-commit hooks
 * Add tests:
     Prefect tasks (DONE) (15/08/22)
-
 * Add linting
 * Add config.yml for connecting general parameters
 * Add CI/CD
@@ -113,7 +108,13 @@ mlflow.set_tracking_uri("sqlite:///mlflow.db")
 mlflow.create_experiment("semicon-sensor-clf","s3://mlflow-semicon-clf/")
 mlflow.set_experiment("semicon-sensor-clf")
 
+linting and black:
 
+pylint --recursive=y train.py, predict.py, ./prefect_monitoring/prefect_monitoring.py, ./prediction_service/app.py
+
+black --skip-string-normalization  --diff train.py, predict.py, ./prefect_monitoring/prefect_monitoring.py
+
+black train.py, predict.py, ./prefect_monitoring/prefect_monitoring.py, ./prediction_service/app.py
 
 prefect:
 
