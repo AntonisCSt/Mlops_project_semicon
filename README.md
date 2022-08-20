@@ -114,7 +114,7 @@ pylint --recursive=y train.py, predict.py, ./prefect_monitoring/prefect_monitori
 
 black --skip-string-normalization  --diff train.py, predict.py, ./prefect_monitoring/prefect_monitoring.py
 
-black train.py, predict.py, ./prefect_monitoring/prefect_monitoring.py, ./prediction_service/app.py
+black --skip-string-normalization train.py, predict.py, ./prefect_monitoring/prefect_monitoring.py, ./prediction_service/app.py
 
 prefect:
 

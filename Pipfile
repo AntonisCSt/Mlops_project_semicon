@@ -27,6 +27,7 @@ uvicorn = "*"
 pylint = "*"
 black = "*"
 isort = "*"
+pre-commit = "*"
 
 [requires]
 python_version = "3.9"
