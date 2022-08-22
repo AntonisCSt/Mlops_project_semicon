@@ -40,10 +40,17 @@ Best practices --> Create tests,linting and pre-commit hooks
     Prefect tasks (DONE) (15/08/22)
     Integration tests (DONE) (20/08/22)
 * Add pre-commit hooks (Done) (20/08/22)
-* Add linting (Done) (20/08/22)
-* Add Makefile
+* Add linting (DONE) (20/08/22)
+* Add Makefile (DONE) (22/08/22)
 * Add config.yml for connecting general parameters
 * Add CI/CD
+
+Taks 6)
+Final touches
+* Make Readme.md nice
+* Write project description
+* Write Instructions
+* Test Instructions
 
 ## Instructions
 
@@ -84,6 +91,27 @@ run: pytest
 
 docker compose -f docker-compose.yml up --build
 python .\send_data.py
+
+
+#### 6) Running Makefile
+
+If you are on windows and want to run a Makefile go to: https://chocolatey.org/install and follow the instructions
+
+run this in gitbash:
+
+$ make build
+
+It will run needed tests and then build image and run the container
+
+after this you can run:
+
+$ python send_data.py
+
+$ python ./prefect_monitoring/prefect_monitoring.py
+
+This will create an html file with the report
+
+
 
 #### How can you contribure:
 Currently this project focuses on MLops. It is weak on the actual ML-pipeline.

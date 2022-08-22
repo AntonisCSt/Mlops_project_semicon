@@ -1,4 +1,5 @@
 from pathlib import Path
+
 import train
 
 
@@ -9,15 +10,15 @@ def test_read_data_task():
     test_path = Path(".\\tests\\train_test.csv")
     df = train.read_data.fn(file_path=test_path)
 
-    assert len(df.columns)==592
+    assert len(df.columns) == 592
+
 
 def test_preprocess_data_task():
-    
 
     test_path = Path(".\\tests\\train_test.csv")
     df = train.read_data.fn(file_path=test_path)
 
     X_train, X_test, y_train, y_test = train.preprocess_semicon.fn(df)
 
-    assert len(X_train.columns)==590
-    assert len(X_test.columns)==590
+    assert len(X_train.columns) == 590
+    assert len(X_test.columns) == 590

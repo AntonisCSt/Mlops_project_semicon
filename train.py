@@ -2,19 +2,21 @@
 # We use the preprocessing.py to trasnform the data
 # We save the model in the mlflow destination (S3 bucket)
 
+import mlflow
+
 # Libraries
 import pandas as pd
 
-import mlflow
-
-from sklearn.metrics import classification_report
+# prefect
+from prefect import flow, task
 from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import StandardScaler
-from sklearn.decomposition import PCA
+from sklearn.metrics import classification_report
 from sklearn.pipeline import make_pipeline
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder
 from sklearn.neighbors import KNeighborsClassifier
+from prefect.task_runners import SequentialTaskRunner
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.model_selection import train_test_split
 
 # Mlflow
 # mlflow.set_tracking_uri("sqlite:///mlflow.db")
@@ -24,9 +26,6 @@ from sklearn.neighbors import KNeighborsClassifier
 # mlflow.create_experiment("semicon-sensor-clf12","s3://mlflow-semicon-clf/")
 # mlflow.set_experiment("semicon-sensor-clf12")
 
-# prefect
-from prefect import flow, task
-from prefect.task_runners import SequentialTaskRunner
 
 # Data
 @task

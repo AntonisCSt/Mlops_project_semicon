@@ -1,10 +1,10 @@
 import json
 import uuid
-from datetime import datetime
 from time import sleep
+from datetime import datetime
 
-from pyarrow import csv
 import requests
+from pyarrow import csv
 
 table = csv.read_csv(".\evidently_service\datasets\sample_test_data.csv")
 data = table.to_pylist()
@@ -19,14 +19,16 @@ class DateTimeEncoder(json.JSONEncoder):
 
 with open("target.csv", 'w') as f_target:
     for row in data:
-        #print(max(0,int(row['Pass/Fail'])))
+        # print(max(0,int(row['Pass/Fail'])))
         row['id'] = str(uuid.uuid4())
         duration = row['Pass/Fail']
-        data=json.dumps(row, cls=DateTimeEncoder)
-        #duration = str(duration)
+        data = json.dumps(row, cls=DateTimeEncoder)
+        # duration = str(duration)
         f_target.write(f"{row['id']},{duration}\n")
-        resp = requests.post("http://127.0.0.1:9696/predict",
-                             headers={"Content-Type": "application/json"},
-                             data=json.dumps(row, cls=DateTimeEncoder)).json()
+        resp = requests.post(
+            "http://127.0.0.1:9696/predict",
+            headers={"Content-Type": "application/json"},
+            data=json.dumps(row, cls=DateTimeEncoder),
+        ).json()
         sleep(1)
         break

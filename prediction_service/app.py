@@ -1,12 +1,12 @@
 # libraries
 import os
-import requests
-import numpy as np
 import pickle
-
-from pymongo import MongoClient
-from flask import Flask, request, jsonify
 import logging
+
+import numpy as np
+import requests
+from flask import Flask, jsonify, request
+from pymongo import MongoClient
 
 # import mlflow
 

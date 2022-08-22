@@ -4,9 +4,9 @@ import os
 
 # import pickle
 import numpy as np
-from fastapi import FastAPI
-from loguru import logger
 import mlflow
+from loguru import logger
+from fastapi import FastAPI
 
 RUN_ID = os.getenv('RUN_ID', 'f0c63f97bbc74a75aa796be9d729df58')
 

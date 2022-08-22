@@ -1,16 +1,17 @@
-import json
 import os
+import json
 import pickle
 from datetime import datetime
+
 import pandas
 import pyarrow.parquet as pq
-from evidently import ColumnMapping
-from evidently.dashboard import Dashboard
-from evidently.dashboard.tabs import ClassificationPerformanceTab
-from evidently.model_profile import Profile
-from evidently.model_profile.sections import ClassificationPerformanceProfileSection
 from prefect import flow, task
 from pymongo import MongoClient
+from evidently import ColumnMapping
+from evidently.dashboard import Dashboard
+from evidently.model_profile import Profile
+from evidently.dashboard.tabs import ClassificationPerformanceTab
+from evidently.model_profile.sections import ClassificationPerformanceProfileSection
 
 MONGO_CLIENT_ADDRESS = "mongodb://localhost:27018/"
 MONGO_DATABASE = "prediction_service"
