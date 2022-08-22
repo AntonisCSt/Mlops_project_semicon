@@ -28,6 +28,7 @@ pylint = "*"
 black = "*"
 isort = "*"
 pre-commit = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.9"
