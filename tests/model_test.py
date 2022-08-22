@@ -15,7 +15,7 @@ def test_read_data_task():
 
 def test_preprocess_data_task():
 
-    test_path = Path(".\\train_test.csv")
+    test_path = Path("./tests/train_test.csv")
     df = train.read_data.fn(file_path=test_path)
 
     X_train, X_test, y_train, y_test = train.preprocess_semicon.fn(df)
