@@ -1,0 +1,30 @@
+name: CI Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    
+    - name: Install dependecies
+      run: pip install pipenv && pipenv install --dev
+
+    - name: Run Unit tests
+      run: pipenv run pytest tests/
+
+    - name: Integration tests
+      run: bash build_test_shut.sh
+
