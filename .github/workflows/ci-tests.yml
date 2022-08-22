@@ -22,8 +22,10 @@ jobs:
     - name: Install dependecies
       run: pip install pipenv && pipenv install --dev
 
-    - name: Run Unit tests
+    - name: See ls
       run: ls
+
+    - name: Run Unit tests  
       run: pipenv run pytest tests/
 
     - name: Integration tests
