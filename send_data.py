@@ -30,5 +30,5 @@ with open("target.csv", 'w') as f_target:
             headers={"Content-Type": "application/json"},
             data=json.dumps(row, cls=DateTimeEncoder),
         ).json()
-        sleep(1)
-        break
+        print(f"prediction: {resp['Pass/Fail']}")
+        sleep(0.5)
