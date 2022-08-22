@@ -23,6 +23,7 @@ jobs:
       run: pip install pipenv && pipenv install --dev
 
     - name: Run Unit tests
+      run: ls
       run: pipenv run pytest tests/
 
     - name: Integration tests
