@@ -16,6 +16,7 @@ pymongo = "*"
 flask = "*"
 pyarrow = "*"
 evidently = "*"
+boto3 = "*"
 
 [dev-packages]
 matplotlib = "*"

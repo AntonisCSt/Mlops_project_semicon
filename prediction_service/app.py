@@ -7,18 +7,26 @@ import numpy as np
 import requests
 from flask import Flask, jsonify, request
 from pymongo import MongoClient
+import boto3
 
-# import mlflow
+AWS_SERVER_PUBLIC_KEY = os.getenv('AWS_SERVER_PUBLIC_KEY')
+AWS_SERVER_SECRET_KEY = os.getenv('AWS_SERVER_SECRET_KEY')
 
 # enviroment parameters
-RUN_ID = os.getenv('RUN_ID', 'f0c63f97bbc74a75aa796be9d729df58')
-
-MODEL_FILE = os.getenv(
-    'MODEL_FILE', f's3://mlflow-semicon-clf/{RUN_ID}/artifacts/artifacts/'
-)
+RUN_ID = os.getenv('RUN_ID', 'f96296ba6d4a4122ad13490bbde0bad2')
 MONGODB_ADDRESS = os.getenv('MONGODB_ADDRESS', "mongodb://127.0.0.1:27017")
 EVIDENTLY_SERVICE_ADDRESS = os.getenv('EVIDENTLY_SERVICE', "http://127.0.0.1:5000")
 
+s3client = boto3.client('s3', 
+                        aws_access_key_id = AWS_SERVER_PUBLIC_KEY, 
+                        aws_secret_access_key = AWS_SERVER_SECRET_KEY,
+                        region_name = 'eu-west-3'
+                       )
+
+response = s3client.get_object(Bucket='mlflow-semicon-clf', Key=f'{RUN_ID}/artifacts/artifacts/model.pkl')
+
+body = response['Body'].read()
+loaded_model = pickle.loads(body)
 # import model
 # loaded_model = mlflow.pyfunc.load_model(MODEL_FILE)
 
@@ -35,7 +43,8 @@ def predict():
     row2 = request.get_json()
     row = row2.values()
     row = np.array(list(row)).reshape(1, -1)
-    loaded_model = pickle.load(open('model.pkl', 'rb'))
+    #loaded_model = pickle.load(open('model.pkl', 'rb'))
+
     pred = int(loaded_model.predict(np.array(row[0][1:591]).reshape(1, -1)))
     # pred = str(pred)
     result = {

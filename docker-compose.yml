@@ -20,6 +20,8 @@ services:
     environment:
       EVIDENTLY_SERVICE: "http://evidently_service.:8085"
       MONGODB_ADDRESS: "mongodb://mongo.:27017/"
+      AWS_SERVER_PUBLIC_KEY: ${AWS_SERVER_PUBLIC_KEY}
+      AWS_SERVER_SECRET_KEY: ${AWS_SERVER_SECRET_KEY}
     ports:
       - "9696:9696"
     networks:

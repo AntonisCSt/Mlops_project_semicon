@@ -10,3 +10,4 @@ evidently
 pymongo
 numpy
 mlflow
+boto3
