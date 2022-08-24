@@ -1,9 +1,26 @@
 ## Semiconductor quality prediction and pipeline
-#### A MLops Zoom camp project
+#### A MLops Zoomcamp project
 
 ## About the project
+Manufacturing process feature selection and categorization. The project focuses on MLops best practices.
 
-----Under construction------
+The projects contains semicoductor sensor data and classifies the end product as Pass or Fail. There are ~580 sensor features that are used. Can we make a classification model that uses the best featuers to make Pass/Fail prediction?
+
+## About the data
+
+* Data Set Characteristics: Multivariate
+* Number of Instances: 1567
+* Area: Computer
+* Attribute Characteristics: Real
+* Number of Attributes: 591
+* Date Donated: 2008-11-19
+* Associated Tasks: Classification, Causal-Discovery
+* Missing Values? Yes
+
+
+## MLops project solution and architecture
+
+
 
 ## Tasks and dates
 Task 1)
@@ -28,7 +45,7 @@ Add orchestration with Prefect
 Task 4)
 Add Monitoring
 * Add Monitoring service (DONE) (19/08/22)
-* Connect mlflow to monitoring image
+* Connect mlflow to monitoring image (DONE) (23/08/22)
 
 Task 4)
 AWS model deploy also connect kinesis and lambda function
@@ -42,12 +59,11 @@ Best practices --> Create tests,linting and pre-commit hooks
 * Add pre-commit hooks (Done) (20/08/22)
 * Add linting (DONE) (20/08/22)
 * Add Makefile (DONE) (22/08/22)
-* Add config.yml for connecting general parameters
-* Add CI/CD
+* Add CI/CD (DONE) (22/08/22)
 
 Taks 6)
 Final touches
-* Make Readme.md nice
+* Make Readme.md nicer
 * Write project description
 * Write Instructions
 * Test Instructions
@@ -99,21 +115,21 @@ If you are on windows and want to run a Makefile go to: https://chocolatey.org/i
 
 run this in gitbash:
 
-$ make build
+make build
 
 It will run needed tests and then build image and run the container
 
 after this you can run:
 
-$ python send_data.py
+python send_data.py
 
-$ python ./prefect_monitoring/prefect_monitoring.py
+python ./prefect_monitoring/prefect_monitoring.py
 
 This will create an html file with the report
 
 
 
-#### How can you contribure:
+### How can you contribure:
 Currently this project focuses on MLops. It is weak on the actual ML-pipeline.
 
 1) A good idea is to apply L1 regularization in a feature selection step.
