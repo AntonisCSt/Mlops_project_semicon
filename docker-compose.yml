@@ -11,26 +11,22 @@ networks:
 
 services:
   prediction_service:
-    build:
-      context: prediction_service
-      dockerfile: Dockerfile
+    image: antonisst/predictionservice
     depends_on:
       - evidently_service
       - mongo
     environment:
       EVIDENTLY_SERVICE: "http://evidently_service.:8085"
       MONGODB_ADDRESS: "mongodb://mongo.:27017/"
-      AWS_SERVER_PUBLIC_KEY: ${AWS_SERVER_PUBLIC_KEY}
-      AWS_SERVER_SECRET_KEY: ${AWS_SERVER_SECRET_KEY}
+      AWS_SERVER_PUBLIC_KEY: ""
+      AWS_SERVER_SECRET_KEY: ""
     ports:
       - "9696:9696"
     networks:
       - back-tier
       - front-tier
   evidently_service:
-    build:
-      context: evidently_service
-      dockerfile: Dockerfile
+    image: antonisst/evidentlyservice
     depends_on:
       - grafana
     volumes:
@@ -51,7 +47,7 @@ services:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
     ports:
-      - "9091:9090"
+      - "9091:9091"
     networks:
       - back-tier
     restart: always
@@ -75,7 +71,7 @@ services:
   mongo:
     image: mongo
     ports:
-      - "27018:27017"
+      - "27018:27018"
     volumes:
       - mongo_data:/data/db
     networks:
