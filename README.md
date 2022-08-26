@@ -20,7 +20,7 @@ The projects contains semicoductor sensor data and classifies the end product as
 
 ## MLops project solution and architecture
 
-![Screenshot](.\project_pictures\Project_solution_architecure_v1.png)
+![Screenshot](project_pictures/Project_solution_architecure_v1.png)
 ## Tasks and dates
 Task 1)
 Add experiment tracking and set-up registery server (local) artifacts in s3 with MLflow
