@@ -173,3 +173,6 @@ pre-commit
 prefect:
 
 prefect orion start
+
+aws ecs:
+docker compose --project-name semicontest -f docker-compose.yml up --build
