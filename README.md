@@ -20,7 +20,7 @@ The projects contains semicoductor sensor data and classifies the end product as
 
 ## MLops project solution and architecture
 
-
+![alt text](project_pictures\Project_solution_architecure_v1.png)
 
 ## Tasks and dates
 Task 1)
@@ -70,6 +70,29 @@ Final touches
 
 ## Instructions
 
+### How to make the app run:
+
+requirments: 
+
+1) docker installed
+2) Having your AWS credential added in docker compose file and model exists in S3. 
+
+for 2) you can also use the model.pkl. Release line 46 in prediction_service\app.py. Put "#" anything related to S3.
+
+```
+docker compose -f docker-compose.yml up --build
+```
+
+### How can you contribure:
+
+Currently this project focuses on MLops. It is weak on the actual ML-pipeline.
+
+1) A good idea is to apply L1 regularization in a feature selection step.
+
+2) Try other classification models and grid search.
+
+
+### Other Insructions:
 #### 1) Install enviroment
 use:
 ```
