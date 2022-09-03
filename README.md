@@ -62,10 +62,10 @@ Best practices --> Create tests,linting and pre-commit hooks
 
 Taks 6)
 Final touches
-* Make Readme.md nicer
-* Write project description
-* Write Instructions
-* Test Instructions
+* Make Readme.md nicer (03/09/22)
+* Write project description (03/09/22)
+* Write Instructions (03/09/22)
+
 
 ## Instructions
 
@@ -90,6 +90,10 @@ Currently this project focuses on MLops. It is weak on the actual ML-pipeline.
 
 2) Try other classification models and grid search.
 
+3) Use Docker compose or any otehr method to automatically push to ECS.
+
+4) Use Kinesis and through a lambda function send stream data to the ECS.
+
 
 ### Other Insructions:
 #### 1) Install enviroment
@@ -106,9 +110,6 @@ mlflow.create_experiment("semicon-sensor-clf","[your S3 bucket]")
 
 ```
 (or use a local file)
-
-#### 2.1) (Optional) Train model and upload
-
 
 #### 3) Run prediction locally using FastAPI and uvicorn server (dev)
 
