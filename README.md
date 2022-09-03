@@ -83,6 +83,7 @@ for 2) you can also use the model.pkl. Release line 46 in prediction_service\app
 docker compose -f docker-compose.yml up --build
 ```
 
+
 ### How can you contribure:
 
 Currently this project focuses on MLops. It is weak on the actual ML-pipeline.
@@ -150,16 +151,6 @@ python send_data.py
 python ./prefect_monitoring/prefect_monitoring.py
 
 This will create an html file with the report
-
-
-
-### How can you contribure:
-Currently this project focuses on MLops. It is weak on the actual ML-pipeline.
-
-1) A good idea is to apply L1 regularization in a feature selection step.
-
-2) Try other classification models and grid search.
-
 
 ### Usefull commands:
 
