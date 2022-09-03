@@ -7,6 +7,7 @@ Manufacturing process feature selection and categorization. The project focuses 
 The projects contains semicoductor sensor data and classifies the end product as Pass or Fail. There are ~580 sensor features that are used. Can we make a classification model that uses the best featuers to make Pass/Fail prediction?
 
 ## About the data
+data source: https://www.kaggle.com/datasets/paresh2047/uci-semcom?resource=download
 
 * Data Set Characteristics: Multivariate
 * Number of Instances: 1567
