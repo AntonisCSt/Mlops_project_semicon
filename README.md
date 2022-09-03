@@ -63,9 +63,9 @@ Best practices --> Create tests,linting and pre-commit hooks
 
 Taks 6)
 Final touches
-* Make Readme.md nicer (03/09/22)
-* Write project description (03/09/22)
-* Write Instructions (03/09/22)
+* Make Readme.md nicer (DONE) (03/09/22)
+* Write project description (DONE) (03/09/22)
+* Write Instructions (DONE) (03/09/22)
 
 
 ## Instructions
