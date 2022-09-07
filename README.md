@@ -82,7 +82,24 @@ for 2) you can also use the model.pkl. Release line 46 in prediction_service\app
 ```
 docker compose -f docker-compose.yml up --build
 ```
+to test it run:
+```
+bash build_test_shut.sh
+```
 
+then you can run:
+```
+python .\send_data.py
+```
+
+finally:
+```
+python ./prefect_monitoring/prefect_monitoring.py
+```
+
+This will create an html file with the report
+
+For the data drift you can check the Grafana container on port 3000 :)
 
 ### How can you contribure:
 
